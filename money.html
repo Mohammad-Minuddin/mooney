@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contain{
+            width: 20%;
+            margin: 0 auto;
+            padding-top: 100px;
+        }
+        .btn{
+            padding: 10px 20px;
+            background: rgb(65, 13, 187);
+            color: white;
+            border: none;
+            margin-left: 68px;
+            border-radius: 20px;
+        }
+        h2{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+       <div class="contain">
+        <h2>Money Exchange Rates</h2>
+        <select name="currency" id="convert1" onchange="first()" oninput="first()" onclick="first()">
+         <option value="USD">USD</option>
+         <option value="TK">TK</option>
+         <option value="INR">INR</option>
+        </select>
+        <input type="number" id="input" onclick="first()" oninput="first()">
+        <br>
+        <br>
+        <select name="currency" id="convert2" onchange="first()" oninput="first()" onclick="first()">
+         <option value="USD1">USD</option>
+         <option value="TK1">TK</option>
+         <option value="INR1">INR</option>
+        </select>
+        <input type="number" id="output" value="0" onclick="first()" oninput="first()"><br><br>
+         <a href="#"><input type="submit" value="CONVERT" class="btn"></a>
+       </div>
+
+
+
+
+
+        <script>
+        function first() {
+            let num1 = document.getElementById("input");
+            let num2 = document.getElementById("output");
+            
+            if(document.getElementById("convert1").value == "USD") {                
+                if(document.getElementById("convert2").value == "USD1") {
+                num2.value = num1.value * 1;
+                }
+                else if(document.getElementById("convert2").value == "TK1") {
+                num2.value = num1.value * 85.68;
+                }
+                else if(document.getElementById("convert2").value == "INR1") {
+                num2.value = num1.value * 75.22;
+                }
+            }
+
+    
+            if(document.getElementById("convert1").value == "TK") {               
+                if(document.getElementById("convert2").value == "USD1") {
+                num2.value = num1.value * 0.012;
+                }
+                 else if(document.getElementById("convert2").value == "TK1") {
+                num2.value = num1.value * 1;
+                }
+                else if(document.getElementById("convert2").value == "INR1") {
+                num2.value = num1.value * 0.88;
+                }
+            }
+            if(document.getElementById("convert1").value == "INR") {               
+                if(document.getElementById("convert2").value == "USD1") {
+                num2.value = num1.value * 0.013;
+                }
+               
+                else if(document.getElementById("convert2").value == "TK1") {
+                num2.value = num1.value * 1.14;
+                }
+                else if(document.getElementById("convert2").value == "INR1") {
+                num2.value = num1.value * 1;
+                }
+            }
+        }
+        </script>
+    
+</body>
+</html>
